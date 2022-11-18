@@ -3,23 +3,21 @@ CREATE DATABASE BookShop;
 USE Bookshop;
 
 --ESTUDIO DE CASO DE LIBRERIA
---HORTA L”PEZ SAMANTHA YAMIL…
---MATRÕCULA: 68653
 
---Se desea encontrar un aumento en las ganancias de BookShop el proximo aÒo 2021.
---Para esto se deben de tener en cuenta las siguientes ·reas en donde nosotros trabajamos que serviran para estimar como incrementar las ganancias:
+--Se desea encontrar un aumento en las ganancias de BookShop el proximo a√±o 2021.
+--Para esto se deben de tener en cuenta las siguientes √°reas en donde nosotros trabajamos que serviran para estimar como incrementar las ganancias:
 
---¡REA DE VENTAS(SUCURSALES DE VENTA/ ENVIOS)
+--√ÅREA DE VENTAS(SUCURSALES DE VENTA/ ENVIOS)
 --LOS MEJORES CLIENTES
---¡REA DE COMPRAS.
+--√ÅREA DE COMPRAS.
 --NUESTROS PRINCIPALES PROVEEDORES.
 
---Se procedera a realizar las consultas en nuestra base de datos de BookShop, donde ya tenemos registro de nuestra actividad economica del aÒo 2020. 
---Gracias a esta base de datos sabremos hacia donde dirigir nuestra atenciÛn para implementar soluciones que aumenten las ganancias el proximo aÒo.
+--Se procedera a realizar las consultas en nuestra base de datos de BookShop, donde ya tenemos registro de nuestra actividad economica del a√±o 2020. 
+--Gracias a esta base de datos sabremos hacia donde dirigir nuestra atenci√≥n para implementar soluciones que aumenten las ganancias el proximo a√±o.
 
 
 --BookShop 
---CONSULTAS EN BASE DE DATOS PARA OBJETIVO DE AUMENTO DE LA GANANCIA EN EL A—O 2021.
+--CONSULTAS EN BASE DE DATOS PARA OBJETIVO DE AUMENTO DE LA GANANCIA EN EL A√ëO 2021.
 
 --TABLAS DE BOOKSHOP
  
@@ -43,12 +41,12 @@ USE Bookshop;
 
 
 --VENTAS TOTALES DE BOOKSHOP 
---øCuales fueron las ventas Totales de BookShop del 2020 entre las Sucursales y los Envios?
+--¬øCuales fueron las ventas Totales de BookShop del 2020 entre las Sucursales y los Envios?
 ----(Consulta 1)
 
---Se empezara por sacar una estimacion de las ventas Totales de BookShop del aÒo 2020, asi como las ventas de cada mes de ahi partiremos para las demas consultas.
+--Se empezara por sacar una estimacion de las ventas Totales de BookShop del a√±o 2020, asi como las ventas de cada mes de ahi partiremos para las demas consultas.
 
---øCuales fueron las ventas totales de BookShop del aÒo 2020?
+--¬øCuales fueron las ventas totales de BookShop del a√±o 2020?
 SELECT SUM(BookPrice) AS [Ventas Totales BookShop]
 FROM Sales
 UNION ALL
@@ -58,14 +56,14 @@ FROM Shipments;
 --$85,118.00 Sucursales
 --$148,423.00 Envios 
 
---Nos da un total de $233,541.00 pesos en el Total de Ventas de BookShop, que nos servira para estimar cuanto es lo que esperamos aumentar el proximo aÒo.
+--Nos da un total de $233,541.00 pesos en el Total de Ventas de BookShop, que nos servira para estimar cuanto es lo que esperamos aumentar el proximo a√±o.
 
 
 
 
 
 --VENTAS POR MES EN BOOKSHOP
---øEn que mes BookShop  vendio menos en Sucursales y Envios?
+--¬øEn que mes BookShop  vendio menos en Sucursales y Envios?
 --(Consulta 2)
 
 
@@ -193,13 +191,13 @@ WHERE SaleDate LIKE  '%12/2020%';
 
 -- Diciembre Ventas totales $15,082.00
 
---Vemos reflejado en las consultas que las ventas m·s bajas en sucursal y envios fueron en el mes de Septiembre con tan solo $11,685.00
+--Vemos reflejado en las consultas que las ventas m√°s bajas en sucursal y envios fueron en el mes de Septiembre con tan solo $11,685.00
 --Por lo que nosotros decidimos para el 2021, dirigir mayor capital a Propaganda y Publicidad durante este mes de "SEPTIEMBRE" en todas nuestras sucursales y anuncios en linea, para ver si asi logramos subir las ganancias.
 --Ahora proseguiremos a hacer un analisis del inventario TOTAL
 
 
---PROMEDIO DE VENTAS DE BookShop del aÒo 2020
---øCual fue el promedio de ventas de todas las sucursales de BookShop en el aÒo 2020?
+--PROMEDIO DE VENTAS DE BookShop del a√±o 2020
+--¬øCual fue el promedio de ventas de todas las sucursales de BookShop en el a√±o 2020?
 --(Consulta 3)
 
 SELECT  S.Subsidiary, AVG(S.BookPrice+SH.BookPrice) AS [PROMEDIO DE VENTAS DE BOOKSHOP]
@@ -212,12 +210,12 @@ GROUP BY S.Subsidiary;
 --Torres Landa	2295.3621
 
 --El promedio de ventas parece muy similar en todas las sucursales en su totalidad, ya que estamos contando envios y ventas
---Sin embargo se espera que este promedio se eleve el siguiente aÒo, entonces tomaremos este promedio como base para compararlo el siguiente aÒo con las ganancias
+--Sin embargo se espera que este promedio se eleve el siguiente a√±o, entonces tomaremos este promedio como base para compararlo el siguiente a√±o con las ganancias
 --Y asi se sabra si se logro aumentar o no el promedio de ventas de BookShop
 
 
 --INVENTARIO GENERAL
---øCuantos libros se tienen en inventario?
+--¬øCuantos libros se tienen en inventario?
 --(Consulta 4)
 
 SELECT B.BookTitle, COUNT(*) AS [ Total de Libros En Stock]
@@ -228,7 +226,7 @@ GROUP BY BookTitle;
 
 
 
---øCuantos libros ya no se tienen en Stock? 
+--¬øCuantos libros ya no se tienen en Stock? 
 --Lista de libros a comprar.
 --(Consulta 5)
 SELECT B.BookTitle, COUNT(*) AS [Libros que ya no tenemos en Stock]
@@ -239,64 +237,64 @@ GROUP BY BookTitle;
 
 
 
---TOTAL DE CAPITAL A TENER EN CUENTA PARA EL ¡REA DE COMPRAS 2021
---øCu·l es el capital que se debe tener el proximo aÒo para concepto de compra de libros inactivos en BookShop?
+--TOTAL DE CAPITAL A TENER EN CUENTA PARA EL √ÅREA DE COMPRAS 2021
+--¬øCu√°l es el capital que se debe tener el proximo a√±o para concepto de compra de libros inactivos en BookShop?
 --(CONSULTA 6) 
 
-SELECT SUM(B.BookPrice) AS  [Costo Total de libros a comprar aÒo 2021 ]
+SELECT SUM(B.BookPrice) AS  [Costo Total de libros a comprar a√±o 2021 ]
 FROM Sales AS S
 JOIN Books AS B ON S.BookID =B.BookID
 WHERE State = 'Inactive';
 --$94,540.00
 
---øA que proveedor debemos priorizar por ser el m·s vedidos en Envios y cu·l por ser el m·s vendido en Sucursales?
+--¬øA que proveedor debemos priorizar por ser el m√°s vedidos en Envios y cu√°l por ser el m√°s vendido en Sucursales?
 --(Consulta 7)
 
-SELECT TOP(1) S.PublisherName,COUNT(B.BookID) AS [N˙mero de libros vendidos]
+SELECT TOP(1) S.PublisherName,COUNT(B.BookID) AS [N√∫mero de libros vendidos]
 FROM Sales AS S 
 JOIN Books AS B ON S.BookID=B.BookID
 GROUP BY S.PublisherName
-ORDER BY [N˙mero de libros vendidos] DESC
+ORDER BY [N√∫mero de libros vendidos] DESC
 
-SELECT TOP(1) SH.PublisherName,COUNT(B.BookID) AS [N˙mero de libros vendidos]
+SELECT TOP(1) SH.PublisherName,COUNT(B.BookID) AS [N√∫mero de libros vendidos]
 FROM Shipments AS SH
 JOIN Books AS B ON SH.BookID=B.BookID
 GROUP BY SH.PublisherName
-ORDER BY [N˙mero de libros vendidos] DESC;
+ORDER BY [N√∫mero de libros vendidos] DESC;
 --springer Nature: 19 libros vendidos
 
---En Sucursales la editorial que m·s se vende es "Elsevier" por lo que decidimos invertir al menos nuestro 15% de la inversion total en compras esta editorial, ya que es la que tiene
---mas demanda y para los envios la editorial m·s vendida es "Springer Nature" por lo que se espera invertir tambien el 15% de la inversion total, esto para que la demanda siga creciendo
+--En Sucursales la editorial que m√°s se vende es "Elsevier" por lo que decidimos invertir al menos nuestro 15% de la inversion total en compras esta editorial, ya que es la que tiene
+--mas demanda y para los envios la editorial m√°s vendida es "Springer Nature" por lo que se espera invertir tambien el 15% de la inversion total, esto para que la demanda siga creciendo
 -- y asi las ventas lo hagan tambien.
 
---øEn cuales Idiomas tenemos que comprar m·s libros por su demanda en BookShop?
+--¬øEn cuales Idiomas tenemos que comprar m√°s libros por su demanda en BookShop?
 --(Consulta 8)
 
 SELECT *
 FROM Books;
 
-SELECT B.Languaje, COUNT(B.BookID) AS  [N˙mero de libros Vendidos]
+SELECT B.Languaje, COUNT(B.BookID) AS  [N√∫mero de libros Vendidos]
 FROM Sales AS S
 JOIN Books AS B ON S.BookID =B.BookID
 WHERE State = 'Inactive'
 GROUP BY B.Languaje
-ORDER BY [N˙mero de Libros Vendidos] DESC; 
+ORDER BY [N√∫mero de Libros Vendidos] DESC; 
 
---IDIOMA MAS VENDIDO EN SUCURSALES: INGLES Y ESPA—OL
+--IDIOMA MAS VENDIDO EN SUCURSALES: INGLES Y ESPA√ëOL
 
-SELECT B.Languaje, COUNT(B.BookID) AS  [N˙mero de libros Vendidos]
+SELECT B.Languaje, COUNT(B.BookID) AS  [N√∫mero de libros Vendidos]
 FROM Shipments AS SH
 JOIN Books AS B ON SH.BookID =B.BookID
 WHERE State = 'Inactive'
 GROUP BY B.Languaje
-ORDER BY [N˙mero de Libros Vendidos] DESC; 
+ORDER BY [N√∫mero de Libros Vendidos] DESC; 
 
---IDIOMA M¡S VENDIDO EN ENVIOS: INGLES Y ESPA—OL
+--IDIOMA M√ÅS VENDIDO EN ENVIOS: INGLES Y ESPA√ëOL
 
 
 
 --LISTA DE IDIOMAS PARA ADQUISICION DE NUEVOS LIBROS.
---øCual es la lista de todos los idiomas que se manejan en los libros de Bookshop para adquisicion de nuevos libros?
+--¬øCual es la lista de todos los idiomas que se manejan en los libros de Bookshop para adquisicion de nuevos libros?
 --(Consulta 9)
 
 SELECT B.Languaje, COUNT(B.BookID) AS [TOTAL DE LIBROS IDIOMA]
@@ -306,29 +304,29 @@ ORDER BY [TOTAL DE LIBROS IDIOMA] DESC;
 --Lista de Idiomas que se manejan en BookShop
 
 
--- Lo que se piensa invertir para ·rea de compras en el aÒo 2021  son $94,540.00 en los libros faltantes en stock.
---Se invertiran $45,460 pesos en libros nuevos en los Idiomas Ingles y EspaÒol ya que son los idiomas m·s demandados. 
+-- Lo que se piensa invertir para √°rea de compras en el a√±o 2021  son $94,540.00 en los libros faltantes en stock.
+--Se invertiran $45,460 pesos en libros nuevos en los Idiomas Ingles y Espa√±ol ya que son los idiomas m√°s demandados. 
 --Y se invertira $10,000 pesos en libros nuevos en todos los 20 idiomas existentes en lista de Bookshop.
 --Esto nos da un total de inversion en compras de $150,000.00
 
---por lo que en base a esto necesitamos que nuestra empresa tenga ganancia de m·s del 20% en cada uno de los medios(FÌsico y Digital) de las ventas totales del aÒo 2020.
---AsÌ se podra cubrir la inversion del proximo aÒo y obtendremos una mayor utilidad gracias al ·rea de Compras y ventas;
+--por lo que en base a esto necesitamos que nuestra empresa tenga ganancia de m√°s del 20% en cada uno de los medios(F√≠sico y Digital) de las ventas totales del a√±o 2020.
+--As√≠ se podra cubrir la inversion del proximo a√±o y obtendremos una mayor utilidad gracias al √°rea de Compras y ventas;
 
 
 
 --PROCEDEREMOS A HACER CONSULTAS EN AMBOS MEDIOS
---FÕSICO (Sucursales)
+--F√çSICO (Sucursales)
 --DIGITAL (Envios)
---PARA ASÕ TOMAR DECISIONES ESPECIFICAS EN COMPRAS Y VENTAS RESPECTO AL ¡REA EN DONDE M¡S FALLA LA EMPRESA PARA LOGRAR MEJORAR Y OBTENER LAS GANANCIAS ESPERADAS.
+--PARA AS√ç TOMAR DECISIONES ESPECIFICAS EN COMPRAS Y VENTAS RESPECTO AL √ÅREA EN DONDE M√ÅS FALLA LA EMPRESA PARA LOGRAR MEJORAR Y OBTENER LAS GANANCIAS ESPERADAS.
 
 
 
---ANALISIS MEDIO FÕSICO(SUCURSALES) 
+--ANALISIS MEDIO F√çSICO(SUCURSALES) 
 --TOMA DE DECISIONES PARA AUMENTAR GANANCIAS.
 
 
---¡REA DE VENTAS 
---øCu·l es la sucursal de nuestra Libreria a la que debemos enfocar nuestra atenciÛn para aumentar nuestra ganancia el proximo aÒo? 
+--√ÅREA DE VENTAS 
+--¬øCu√°l es la sucursal de nuestra Libreria a la que debemos enfocar nuestra atenci√≥n para aumentar nuestra ganancia el proximo a√±o? 
 --(Consulta 10)
 
 SELECT * 
@@ -364,11 +362,11 @@ WHERE Subsidiary= 'Torres Landa';
 
 
 
---SUCURSAL "PANORAMA" SUJETO A ANALISIS PROFUNDO PARA AUMENTAR GANANCIAS EN A—O 2021.
---DE ACUERDO A NUESTRAS VENTAS TOTALES DEL 2020, SE SACARA EL PROMEDIO Y DESVIACI” ESTANDAR DE LAS VENTAS 
---PARA ANALIZAR SU COMPORTAMIENTO EN EL A—O Y ASI TENER UN VALOR ESPERADO BASE PARA EL PROXIMO A—O.
+--SUCURSAL "PANORAMA" SUJETO A ANALISIS PROFUNDO PARA AUMENTAR GANANCIAS EN A√ëO 2021.
+--DE ACUERDO A NUESTRAS VENTAS TOTALES DEL 2020, SE SACARA EL PROMEDIO Y DESVIACI√ì ESTANDAR DE LAS VENTAS 
+--PARA ANALIZAR SU COMPORTAMIENTO EN EL A√ëO Y ASI TENER UN VALOR ESPERADO BASE PARA EL PROXIMO A√ëO.
 
---øCu·l es el promedio de precio de libros vendidos en sucursal Panorama?
+--¬øCu√°l es el promedio de precio de libros vendidos en sucursal Panorama?
 --(CONSULTA 11)
 
 SELECT *  
@@ -383,14 +381,14 @@ WHERE Subsidiary = 'Panorama';
 --Promedio de precio de los libros vendidos = 800.5555
 --DE de precio de Libros vendidos = 224.891146
 
---Por lo que nos damos cuenta de que debemos empezar a incentivar a nuestros empleados a que vendan libros m·s caros y asi poder subir las ganancias el proximo aÒo en la sucursal.
+--Por lo que nos damos cuenta de que debemos empezar a incentivar a nuestros empleados a que vendan libros m√°s caros y asi poder subir las ganancias el proximo a√±o en la sucursal.
 
 
 
 
--- Asi que se implementaran bonos a los mejores vendedores de este aÒo en la sucursal "PANORAMA" para motivacion del personal del ·rea de ventas
---Esto creara que el personal se motive y logren m·s ventas el proximo aÒo.
---øCualÈs son los Empleados que ganaran bonos este aÒo por ser los mejores vendedores?
+-- Asi que se implementaran bonos a los mejores vendedores de este a√±o en la sucursal "PANORAMA" para motivacion del personal del √°rea de ventas
+--Esto creara que el personal se motive y logren m√°s ventas el proximo a√±o.
+--¬øCual√©s son los Empleados que ganaran bonos este a√±o por ser los mejores vendedores?
 --(consulta 12)
 
 SELECT TOP(5) E.EmployeeID, COUNT(S.BookID) AS [Numero de libros Vendidos por Empleado]
@@ -402,14 +400,14 @@ ORDER BY [Numero de libros Vendidos por Empleado] DESC;
 
 
 --Observamos que fueron dos Empleados los que vendieron >1 libro, por lo que la empresa decidio dar los bonos solo a estas dos personas.
---øCual es el nombre, domicilio, codigo postal y telefono de los Empleados que ganaron los bonos por concepto de venta?
+--¬øCual es el nombre, domicilio, codigo postal y telefono de los Empleados que ganaron los bonos por concepto de venta?
 --(Consulta 13) 
 
 SELECT E.EmployeeID, E.FirstName, E.LastName, E.Address, E.PostalCode, E.Phone
 FROM Employees AS E
 WHERE E.EmployeeID IN ('44945','43323');
 
--- Los 2 empleados que ganaran bonos este aÒo en la sucursal "PANORAMA" con el fin de motivar el aumento de ventas del proximo aÒo por sus ventas son:
+-- Los 2 empleados que ganaran bonos este a√±o en la sucursal "PANORAMA" con el fin de motivar el aumento de ventas del proximo a√±o por sus ventas son:
 -- NOMBRE/ EmployeeID
 --Victoria Alguea Urreta    44945
 -- Diego Dominguez Cardenas   43323
@@ -418,8 +416,8 @@ WHERE E.EmployeeID IN ('44945','43323');
 
 
 --NUESTROS MEJORES CLIENTES 
---VAMOS A OFRECER EL 30% DE DESCUENTO A NUESTROS 5 CLIENTES PRINCIPALES EN LA SUCURSAL, PARA ASÕ HACER PROMOCION DE NUESTRA EMPRESA Y VENDER M¡S.
---øCu·l es el ID de los cinco clientes que recibiran descuento por concepto de compras?
+--VAMOS A OFRECER EL 30% DE DESCUENTO A NUESTROS 5 CLIENTES PRINCIPALES EN LA SUCURSAL, PARA AS√ç HACER PROMOCION DE NUESTRA EMPRESA Y VENDER M√ÅS.
+--¬øCu√°l es el ID de los cinco clientes que recibiran descuento por concepto de compras?
 --(Consulta 14)
 
 SELECT TOP(5) C.CustomerID, COUNT(S.BookID) AS [Numero de libros Comprados por Cliente]
@@ -429,14 +427,14 @@ WHERE S.Subsidiary= 'Panorama'
 GROUP BY C.CustomerID
 ORDER BY [Numero de libros Comprados por Cliente] DESC;
 
---Los 5 clientes que recibiran descuento de fin de aÒo son los Clientes con ID: 
+--Los 5 clientes que recibiran descuento de fin de a√±o son los Clientes con ID: 
 --52319,52612,56794,57808,58585
 
 
 
 
 --Procedemos a buscar los datos de los 5 clientes para contactarnos con ellos y poderles hacer el descuento, asi como para que difundan nuestra empresa.
---øC˙al es el nombre de la compaÒia,RFC y telefono de nuestros clientes que recibiran descuento?
+--¬øC√∫al es el nombre de la compa√±ia,RFC y telefono de nuestros clientes que recibiran descuento?
 --(Consulta 15)
 
 SELECT DISTINCT C.CustomerID, C.CompanyName, C.RFC, C.Phone, S.Subsidiary
@@ -457,10 +455,10 @@ AND S.Subsidiary= 'Panorama';
 
 
 
---¡REA DE COMPRAS EN SUCURSAL "PANORAMA"
+--√ÅREA DE COMPRAS EN SUCURSAL "PANORAMA"
 
 --PARA AUMENTAR LA GANANCIA AHORA DEBEMOS HACER  INVENTARIO DE  LIBROS HAY EN STOCK PARA HACER UN ANALISIS DEL AREA DE COMPRAS,
---TOMAR DECISIONES DE ACUERDO A LOS RESULTADOS Y ASI MEJORAR NUESTRAS VENTAS PARA EL PROXIMO A—O EN LA SUCURSAL.
+--TOMAR DECISIONES DE ACUERDO A LOS RESULTADOS Y ASI MEJORAR NUESTRAS VENTAS PARA EL PROXIMO A√ëO EN LA SUCURSAL.
 
 
 --LIBRO MAS VENDIDO 
@@ -472,18 +470,18 @@ AND S.Subsidiary= 'Panorama';
 
 
 
---Categoria m·s vendida 
---øC˙al es el TOP 3 de categorias en la que m·s se tiene que invertir por concepto de mayores ventas?
+--Categoria m√°s vendida 
+--¬øC√∫al es el TOP 3 de categorias en la que m√°s se tiene que invertir por concepto de mayores ventas?
 --(Consulta 16)
 
-SELECT TOP(3) B.Classification, COUNT(B.BookID) AS [N˙mero de libros vendidos por categoria]
+SELECT TOP(3) B.Classification, COUNT(B.BookID) AS [N√∫mero de libros vendidos por categoria]
 FROM Sales AS S
 JOIN Books AS B ON S.BookID = B.BookID
 WHERE S.Subsidiary= 'Panorama'
 GROUP BY Classification
-ORDER BY [N˙mero de libros vendidos por categoria] DESC;
+ORDER BY [N√∫mero de libros vendidos por categoria] DESC;
 
---DEBEMOS DE TENER EN STOCK EL SIGUIENTE A—O M¡S LIBROS DE LAS SIGUIENTES CATEGORIAS PARA AUMENTAR NUESTRAS VENTAS YA QUE LA DEMANDA ES M¡S GRANDE
+--DEBEMOS DE TENER EN STOCK EL SIGUIENTE A√ëO M√ÅS LIBROS DE LAS SIGUIENTES CATEGORIAS PARA AUMENTAR NUESTRAS VENTAS YA QUE LA DEMANDA ES M√ÅS GRANDE
 --1. Earth and Planetary Sciences
 --2. Arts and Humanities
 --3. Biochemistry Genetics and Molecular Biology
@@ -492,34 +490,34 @@ ORDER BY [N˙mero de libros vendidos por categoria] DESC;
 
 
 --LENGUAJE MAS VENDIDO PARA TERMINOS DE COMPRA
---øEn que Idiomas se necesitan adquirir los libros en sucursal "Panorama" por el numero de la demanda?
+--¬øEn que Idiomas se necesitan adquirir los libros en sucursal "Panorama" por el numero de la demanda?
 --(CONSULTA 17)
 
 
-SELECT TOP(3) B.Languaje, COUNT(B.BookID) AS [N˙mero de libros vendidos por Idioma]
+SELECT TOP(3) B.Languaje, COUNT(B.BookID) AS [N√∫mero de libros vendidos por Idioma]
 FROM Sales AS S
 JOIN Books AS B ON S.BookID = B.BookID
 WHERE S.Subsidiary= 'Panorama'
 GROUP BY Languaje
-ORDER BY [N˙mero de libros vendidos por Idioma] DESC;
+ORDER BY [N√∫mero de libros vendidos por Idioma] DESC;
 -- ENG, GER 
 
---El lenguaje en el que m·s se venden los libros es en Ingles, por lo que de nuestra inversion destinaremos 20% de los libros en ingles a la sucursla "Panorama" 
+--El lenguaje en el que m√°s se venden los libros es en Ingles, por lo que de nuestra inversion destinaremos 20% de los libros en ingles a la sucursla "Panorama" 
 --Aumentaremos el numero de libros en Aleman, ya que se ve que tambien se han estado vendidendo.
 
 
 
 
 --EDITORIAL
---øCu·l es el TOP 5 de las editoriales que se venden m·s y cuantos libros vendieron en Sucursal Panorama?
+--¬øCu√°l es el TOP 5 de las editoriales que se venden m√°s y cuantos libros vendieron en Sucursal Panorama?
 --(CONSULTA 18)
 
-SELECT TOP(5) B.PublisherName, COUNT(B.BookID) AS [N˙mero de libros vendidos por Editorial]
+SELECT TOP(5) B.PublisherName, COUNT(B.BookID) AS [N√∫mero de libros vendidos por Editorial]
 FROM Sales AS S
 JOIN Books AS B ON S.BookID = B.BookID
 WHERE S.Subsidiary= 'Panorama'
 GROUP BY B.PublisherName
-ORDER BY [N˙mero de libros vendidos por Editorial] DESC;
+ORDER BY [N√∫mero de libros vendidos por Editorial] DESC;
 
 
 --Las editoriales que se vendieron en la sucursal "PANORAMA" son: 
@@ -532,8 +530,8 @@ ORDER BY [N˙mero de libros vendidos por Editorial] DESC;
 
 
 
---Con esto decidimos invertir m·s el proximo aÒo con nuestros proveedores de la editorial "Springer Nature" Ya que fueron los libros que m·s se vendieron.
---øCu·les libros de Springer Nature debemos comprar para el proximo aÒo dada la demanda?
+--Con esto decidimos invertir m√°s el proximo a√±o con nuestros proveedores de la editorial "Springer Nature" Ya que fueron los libros que m√°s se vendieron.
+--¬øCu√°les libros de Springer Nature debemos comprar para el proximo a√±o dada la demanda?
 --(Consulta 19)
  
  SELECT S.BookTitle, COUNT(P.PublisherName) AS [TOTAL LIBROS VENDIDOS]
@@ -544,27 +542,27 @@ ORDER BY [N˙mero de libros vendidos por Editorial] DESC;
  GROUP BY S.BookTitle
 
  -- Esta es la lista de los libros que vendimos de Springer Nature; Genome Dynamics and Stability y Lecture Notes in Earth Sciences, por lo que estos nombres 
- --seran parte de nuestra inversion el siguiente aÒo. 
+ --seran parte de nuestra inversion el siguiente a√±o. 
 
 
 
 
 
---CALCULO DE INVERSI”N PARA A—O 2021
---øCuanto se tiene que tener en capital el proximo aÒo para destinar a compras en la sucursal "Panorama"
+--CALCULO DE INVERSI√ìN PARA A√ëO 2021
+--¬øCuanto se tiene que tener en capital el proximo a√±o para destinar a compras en la sucursal "Panorama"
 --(Consulta 20)
 
-SELECT SUM(B.BookPrice+(B.BookPrice*0.40)) AS  [Costo Total de libros a comprar aÒo 2021 ]
+SELECT SUM(B.BookPrice+(B.BookPrice*0.40)) AS  [Costo Total de libros a comprar a√±o 2021 ]
 FROM Sales AS S
 JOIN Books AS B ON S.BookID =B.BookID
 WHERE S.Subsidiary= 'Panorama'
 AND State = 'Inactive'; 
 --$14,403.20
 
---Vamos a destinar $14,403.20 del total de nuestra inversiÛn al ·rea de compras de la sucursal "Panorama" por los libros que ya no hay en stock 
+--Vamos a destinar $14,403.20 del total de nuestra inversi√≥n al √°rea de compras de la sucursal "Panorama" por los libros que ya no hay en stock 
 --Y destinaremos $15,596.8 en libros nuevos que se hayan comprado en BookShop a esta sucursal con las especificaciones de los analisis de compra y venta que ya estimamos, para motivos de crecimiento economico. 
---Con un total de parte de inversiÛn de $30,000.00 a esta sucural.
---Por lo que se espera al menos una ganancia que formar· parte del 20% esperado de las Ventas totales de las sucursales sobre la inversion en el aÒo 2021.
+--Con un total de parte de inversi√≥n de $30,000.00 a esta sucural.
+--Por lo que se espera al menos una ganancia que formar√° parte del 20% esperado de las Ventas totales de las sucursales sobre la inversion en el a√±o 2021.
 --Ya terminamos nuestro analisis de la sucursal que menos vende fisicamente, ahora proseguiremos a hacerlo con la que opera mal en envios 
 
 
@@ -575,7 +573,7 @@ AND State = 'Inactive';
 
 
 --VENTAS TOTALES EN ENVIOS 
---øCuales fueron las ventas totales en envios en el aÒo 2020?øEn que Sucursal se vendio menos en Envios? 
+--¬øCuales fueron las ventas totales en envios en el a√±o 2020?¬øEn que Sucursal se vendio menos en Envios? 
 --(CONSULTA 21)
 
 SELECT *
@@ -610,14 +608,14 @@ WHERE Subsidiary= 'Panorama';
 --Se tomaran solo pocas decisiones pero fuertes para poder aumentar las ganancias un 20%.
 
 --Gracias al al analisis nos damos cuenta de que la Sucursal que peor opera en Envios es "Campestre" con $6,690.00 pesos en ventas.
---Por lo que se espera incentivar a los empleados a estar m·s al pendiente de la pagÌna en internet donde se realizan los envios. 
+--Por lo que se espera incentivar a los empleados a estar m√°s al pendiente de la pag√≠na en internet donde se realizan los envios. 
 
 
 --VENTAS 
 
---Se tomara la decision de aumentar el puesto a Gerente al empleado de ventas que haya vendido m·s en Envios en Sucursal Campestre.
---Asi el proximo aÒo nuestros empleados ser·n m·s competitivos y aumentaran las ventas, en cambio si se sigue viendo una venta menor, se despedira al encargado.
---øCu·l es el nombre del empleado que ha vendido m·s libros en envios y tomar· la gerencia?
+--Se tomara la decision de aumentar el puesto a Gerente al empleado de ventas que haya vendido m√°s en Envios en Sucursal Campestre.
+--Asi el proximo a√±o nuestros empleados ser√°n m√°s competitivos y aumentaran las ventas, en cambio si se sigue viendo una venta menor, se despedira al encargado.
+--¬øCu√°l es el nombre del empleado que ha vendido m√°s libros en envios y tomar√° la gerencia?
 --(Consulta 22)
 
 SELECT TOP(1) S.EmployeeID, COUNT(S.BookID) AS [Total Libros Vendidos]
@@ -634,8 +632,8 @@ WHERE E.EmployeeID= '43953';
 --El empleado que recibira el ascenso es Tarsicio Landeta Tormejon.
 
 
---Buscaremos los  libros  vendidos en Envios para implementar m·s cantidades de estos en la inversiÛn
---øC˙ales fueron los libros vendidos en Envios?
+--Buscaremos los  libros  vendidos en Envios para implementar m√°s cantidades de estos en la inversi√≥n
+--¬øC√∫ales fueron los libros vendidos en Envios?
 --(Consulta 23)
 
 SELECT  S.BookTitle, S.BookPrice,B.Classification, COUNT(S.BookID) AS [TOTAL DE LIBROS VENDIDOS]
@@ -645,7 +643,7 @@ WHERE S.Subsidiary= 'Campestre'
 GROUP BY S.BookTitle, S.BookPrice, B.Classification
 ORDER BY [TOTAL DE LIBROS VENDIDOS] DESC;
 
---Observamos que las ventas son muy malas, solo se vendieron 4 libros y la mayoria de Artes y Humanidades, asi que aumentaremos m·s libros de Artes y Humanidades a nuetsra inversiÛn
+--Observamos que las ventas son muy malas, solo se vendieron 4 libros y la mayoria de Artes y Humanidades, asi que aumentaremos m√°s libros de Artes y Humanidades a nuetsra inversi√≥n
 --en envios pero tambien implementaremos publicidad y propaganda en nuestros medios digitales en sucursal "Campestre" para llegar a mas publico y que conozcan la variedad
 --de libros, idiomas y clasificaciones que trabajamos.
 
@@ -654,7 +652,7 @@ ORDER BY [TOTAL DE LIBROS VENDIDOS] DESC;
 
 
 --Ahora proseguimos a implementar un 50% de descuento a nuestro mejor cliente en Bookshop Envios para incentivar a mayor compra futura. 
---øCu·l es el nombre y datos generales de nuestro mejor cliente al que le daremos el descuento por concepto de compras en Sucursal "Campestre?
+--¬øCu√°l es el nombre y datos generales de nuestro mejor cliente al que le daremos el descuento por concepto de compras en Sucursal "Campestre?
 --(Consulta 24)
 
 
@@ -670,12 +668,12 @@ FROM Customers AS C
 WHERE C.CustomerID= '56922';
 --COSTCO DE MEXICO S.A. DE C.V.
 
---Con estas grandes decisiones se espera que en Envios en la Sucursal "Campestre" aumenten las ventas y consigo las ganancias en el aÒo 2021. 
+--Con estas grandes decisiones se espera que en Envios en la Sucursal "Campestre" aumenten las ventas y consigo las ganancias en el a√±o 2021. 
 
 
 
 
---EstimaciÛn de lo que se espera aumentar en el aÒo 2021 considerando que se pueden elevar nuestras ganancias mas del 20%
+--Estimaci√≥n de lo que se espera aumentar en el a√±o 2021 considerando que se pueden elevar nuestras ganancias mas del 20%
 --(Consulta 25)
 
 SELECT SUM(BookPrice+(BookPrice*0.2)) AS [Ventas Totales BookShop Esperadas 2021]
@@ -686,7 +684,7 @@ FROM Shipments;
 --$102,141.60 
 --$178,107.60
 
---En base a nuestras estadisticas y decisiones a tomar por cada ·rea de la empresa
---Se espera ganar el proximo aÒo 2021 un total de $280,249.2 en el ·rea de ventas de Sucursales y Envios 
+--En base a nuestras estadisticas y decisiones a tomar por cada √°rea de la empresa
+--Se espera ganar el proximo a√±o 2021 un total de $280,249.2 en el √°rea de ventas de Sucursales y Envios 
 --En BookShop que finalmente aumentara las ganancias y utilidades totales de la Empresa. 
 
