@@ -1,2 +1,1 @@
-# EstudioDeCasoLibreria
-Consultas SQL librería
+# SQL Proyects
